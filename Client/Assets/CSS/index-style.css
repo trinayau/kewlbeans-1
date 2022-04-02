@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden
 }
    
 #hero {
@@ -27,7 +28,6 @@ left:0;
 background:rgba(0,0,0,0.5)
 }
 
-
 #hero video {
 width:100%;
 height:100%;
@@ -38,11 +38,14 @@ z-index:5;
 object-fit:cover;
 font-family:'object-fit: cover';
 }
+
 #hero .caption {
     position:relative;
     z-index:20;
     text-align:center;
     color:#ffffff;
+    bottom: 100px;
+    text-align: center;
 }
 
 .logo {
@@ -54,12 +57,30 @@ font-family:'object-fit: cover';
     text-decoration: none;
 }
 
-h2
+#hero h1 {
+    font-size: 96px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#hero h2
 {
-  font-size: 1em;
+  font-size: 3em;
   font-weight: 800;
   color: #fff;
   line-height: 1em;
+}
+
+#hero p {
+    font-size: 1.1em;
+    color: #fff;
+    margin: 20px 0;
+    font-weight: 400;
+    max-width: 700px;
 }
 
 .logo {
@@ -67,6 +88,7 @@ h2
     text-transform: uppercase;
     cursor: pointer;
     z-index: 21;
+
 }
 
 
@@ -74,31 +96,114 @@ h2
     height: 100vh;
 
 }
+/* Caption Button*/
+
+.caption {
+    margin: 50px;
+}
 
 .caption a {
-    display: inline-block;
-  font-size: 1em;
-  background: #fff;
-  padding: 10px 30px;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: 500;
-  margin-top: 10px;
-  color: #111;
-  letter-spacing: 2px;
-  transition: 0.2s;
+    display: block;
+    font-size: 1em;
+    background: #fff;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 15px;
+    color: #111;
+    letter-spacing: 2px;
+    transition: 0.2s;
+    text-align: center;
 }
 
 .caption a:hover
 {
   letter-spacing: 6px;
   color: #634D40;
+  text-decoration: none;
+ 
+}
+
+.caption a:after {
+    opacity: 0;
+    content: '';
+    position: absolute;
+    top: 225px;
+    left: 350px;
+    width: 18px;
+    height: 16px;
+    background: url(../Images/arrow-short--white.svg) center no-repeat;
+    background-size: contain;
+    transition: all ease .2s;
+}
+
+.caption a:hover:after {
+    
+    opacity: 1;
+    left: 405px;
+}
+
+.nav-btn {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 0.8em;
+    background: #fff;
+    padding: 10px 11px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #111;
+    letter-spacing: 2px;
+    transition: 0.2s;
+    color: #634D40;
+    text-align: center;
+}
+
+.nav-btn:hover{
+    letter-spacing: 5px;
+    color: #634D40;
+    text-decoration: none;
 }
 
 nav {
     z-index: 10000;
 }
 
+
 .nav-link{
     color: white !important;
+    font-size: 1em;
+    
+}
+
+.nav-link:hover {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 8'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .4s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-3px);}}%3C/style%3E%3Cpath fill='none' stroke='white' stroke-width='1' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-position: 0 100%;
+  background-size: auto 6px;
+  background-repeat: repeat-x;
+  text-decoration: none;
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .logo {
+        font-size: 30px;
+    }
+    #hero h1 {
+        font-size: 60px;
+    }
+    .nav-btn {
+        background: none;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+        color: #fff;
+        font-size: 1em;
+        letter-spacing: 0;
+    }
+
+    .caption a {
+        margin: 10px 25px 0px 25px;
+    }
 }
