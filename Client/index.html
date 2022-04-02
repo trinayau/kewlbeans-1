@@ -12,40 +12,100 @@
     <title>Latte.io</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark text-white">
-        <a class="logo" href="#">LATTE.IO</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Reviews<a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Map</a>
-              </li>
-            <a href="#" class="nav-btn">New Post</a>
-          </ul>
-      
-        </div>
-      </nav>
+    <!--Start of hero section-->
     <div id="hero">
+        <nav class="navbar navbar-expand-lg navbar-dark text-white fixed-top">
+            <a class="logo" href="#">LATTE.IO</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Reviews<a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Map</a>
+                  </li>
+                <a href="#" class="nav-btn">New Post</a>
+              </ul>
+            </div>
+          </nav>
         <video loop muted autoplay preload="auto">
             <source src="Assets/Images/coffeevid.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <div class="caption text-left d-flex flex-column">
+        <div class="caption text-center d-flex flex-column mt-5">
             <h1>LATTE.IO</h1>
-            <p>Post your experiences with artisan coffee and cafes anonymously.<br> If you've ever drank coffee, you're already one of us.</p>
-            <a href="#">Tell your story</a>
+            <p class="m-2">Post your experiences with artisan coffee and cafes anonymously.<br> If you've ever drank coffee, you're already one of us.</p>
+            <a href="#" class="m-2">Tell your story</a>
         </div>
     </div>
+<!--End of hero section-->
+<!--Start of intro section-->
 <section class="intro">
-    <h1>HELLO</h1>
+    <div class="intro-container">
+        <div class="row align-items-lg-center">
+            <div class="col-lg-5 text-center mr-3">
+                <img src="Assets/Images/pexels-tim-douglas-6205497.jpg" height="550px" class="rounded shadow-" alt="">
+            </div>
+        <div class="col-sm-8 col-lg-5 col-xl-4 text">
+            <h1>Drink.</h1>
+                <br>
+            <h1>Contemplate.</h1>
+                <br>
+            <h1>Connect.</h1>
+            <h3>Explore your local coffee scene with Latte.</h3>
+            <p>Latte helps you check out the latest recommendations from fellow coffee-lovers and anonymously shares your opinion to help others shop and drink local. </p>
+            <!--Link to posts page-->
+            <a href="#">Let's start!</a>
+     </div>
+    </div>
+</div>
+
 </section>
+<!--End of intro section-->
+<footer class="mt-auto border-top">
+    <h2 class="text-dark">LATTE.IO</h2>
+    <div class="row">
+        <img src="Assets/Images/coffee-shop-svgrepo-com.svg" height="50px" class="ml-3">
+        <div class="col-12 col-md text-dark">
+           Serving local since 2022
+          <small class="d-block mb-3 text-muted">© 2022-2022</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Features</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Cool stuff</a></li>
+            <li><a class="text-muted" href="#">Random feature</a></li>
+            <li><a class="text-muted" href="#">Team feature</a></li>
+            <li><a class="text-muted" href="#">Stuff for developers</a></li>
+            <li><a class="text-muted" href="#">Another one</a></li>
+            <li><a class="text-muted" href="#">Last time</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Resource</a></li>
+            <li><a class="text-muted" href="#">Resource name</a></li>
+            <li><a class="text-muted" href="#">Another resource</a></li>
+            <li><a class="text-muted" href="#">Final resource</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>About</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Team</a></li>
+            <li><a class="text-muted" href="#">Locations</a></li>
+            <li><a class="text-muted" href="#">Privacy</a></li>
+            <li><a class="text-muted" href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
 </body>
 </html>

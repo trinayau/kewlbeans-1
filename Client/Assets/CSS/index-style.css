@@ -5,47 +5,53 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  overflow-x: hidden
-}
-   
-#hero {
-    height:100vh;
-    width:100%;
-    display:flex;
-    align-items:center;
-    justify-content: center;
+  overflow-x: hidden;
 }
 
-
-#hero::after {
-width:100%;
-height:100%;
-content: '';
-position:absolute;
-z-index:10;
-top:0;
-left:0;
-background:rgba(0,0,0,0.5)
+body {
+    padding-left: 0;
+    padding-right: 0;
 }
 
-#hero video {
-width:100%;
-height:100%;
-position:absolute;
-top:0;
-left:0;
-z-index:5;
-object-fit:cover;
-font-family:'object-fit: cover';
+/*Nav bar styling */
+nav {
+    z-index: 10000;
 }
 
-#hero .caption {
-    position:relative;
-    z-index:20;
-    text-align:center;
-    color:#ffffff;
-    bottom: 100px;
+
+.nav-link{
+    color: white;
+    font-size: 1em;
+}
+
+.nav-link:hover {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 8'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .4s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-3px);}}%3C/style%3E%3Cpath fill='none' stroke='white' stroke-width='1' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-position: 0 100%;
+  background-size: auto 6px;
+  background-repeat: repeat-x;
+  text-decoration: none;
+
+}
+
+.nav-btn {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 1em;
+    background: #fff;
+    padding: 8px 8px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #111;
+    letter-spacing: 2px;
+    transition: 0.2s;
+    color: #634D40;
     text-align: center;
+}
+
+.nav-btn:hover{
+    letter-spacing: 5px;
+    color: #634D40;
+    text-decoration: none;
 }
 
 .logo {
@@ -57,12 +63,55 @@ font-family:'object-fit: cover';
     text-decoration: none;
 }
 
+.nav-active {
+    background-color:#fff;
+    box-shadow: 5px -1px 12px -5px grey;
+}
+/******Hero styling ******/
+   
+#hero {
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    
+}
+/*Hero dark overlay*/
+#hero::after {
+    width:100%;
+    height:100%;
+    content: '';
+    position:absolute;
+    z-index:10;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.5);
+}
+
+#hero video {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:5;
+    object-fit:cover;
+}
+
+#hero .caption {
+    position:relative;
+    z-index:20;
+    text-align:center;
+    color:#ffffff;
+    bottom: 100px;
+    text-align: center;
+}
+
 #hero h1 {
-    font-size: 96px;
-    margin-bottom: 15px;
+    font-size: 86px;
+    line-height: 120px !important;
     font-weight: 700;
     color: #fff;
-    line-height: 1em;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -81,26 +130,10 @@ font-family:'object-fit: cover';
     margin: 20px 0;
     font-weight: 400;
     max-width: 700px;
+    line-height: 35px;
 }
 
-.logo {
-    color: #fff;
-    text-transform: uppercase;
-    cursor: pointer;
-    z-index: 21;
-
-}
-
-
-.intro {
-    height: 100vh;
-
-}
 /* Caption Button*/
-
-.caption {
-    margin: 50px;
-}
 
 .caption a {
     display: block;
@@ -110,7 +143,9 @@ font-family:'object-fit: cover';
     text-transform: uppercase;
     text-decoration: none;
     font-weight: 500;
-    margin-top: 15px;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
     color: #111;
     letter-spacing: 2px;
     transition: 0.2s;
@@ -125,11 +160,12 @@ font-family:'object-fit: cover';
  
 }
 
+/* This adds an arrow on hover to the 'tell your story' button*/
 .caption a:after {
     opacity: 0;
     content: '';
     position: absolute;
-    top: 225px;
+    top: 203px;
     left: 350px;
     width: 18px;
     height: 16px;
@@ -141,50 +177,68 @@ font-family:'object-fit: cover';
 .caption a:hover:after {
     
     opacity: 1;
-    left: 405px;
+    left: 410px;
 }
 
-.nav-btn {
-    display: inline-block;
-    font-weight: 500;
-    font-size: 0.8em;
-    background: #fff;
-    padding: 10px 11px;
+/***** Intro Section ****/
+.intro {
+    background-color: #F1F0EA;
+}
+
+.intro-container {
+    padding-top: 150px;
+    padding-bottom: 100px;
+}
+
+.intro h1 {
+    margin: 0;
+    font-size: 64px;
+    line-height: 95px;
+    margin-bottom: 20px;
+}
+
+.intro h3 {
+    line-height: 33px;
+    font-size: 22px;
+    color:#634D40;
+}
+
+.intro a {
+    display: block;
+    font-size: 1em;
+    background: #c2ae9e;
+    padding: 10px 30px;
     text-transform: uppercase;
     text-decoration: none;
+    font-weight: 500;
     color: #111;
     letter-spacing: 2px;
     transition: 0.2s;
-    color: #634D40;
     text-align: center;
+    width: 200px;
 }
 
-.nav-btn:hover{
-    letter-spacing: 5px;
-    color: #634D40;
+.intro a:hover {
     text-decoration: none;
+    color: #111;
+    letter-spacing: 6px;
+    width: 250px;
 }
 
-nav {
-    z-index: 10000;
+.intro p {
+    margin-bottom: 14px;
+    font-size: 16px;
+    line-height: 25px;
+    margin-top: 0;
 }
 
-
-.nav-link{
-    color: white !important;
-    font-size: 1em;
-    
+/**** Footer ****/
+footer {
+    background-color: #d4d1cc;
+    color: #F1F0EA;
+    padding: 30px;
 }
-
-.nav-link:hover {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 8'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .4s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-3px);}}%3C/style%3E%3Cpath fill='none' stroke='white' stroke-width='1' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
-  background-position: 0 100%;
-  background-size: auto 6px;
-  background-repeat: repeat-x;
-  text-decoration: none;
-
-}
-
+/***** Responsive support ****/
 @media only screen and (max-width: 1000px) {
 
     .logo {
@@ -204,6 +258,25 @@ nav {
     }
 
     .caption a {
-        margin: 10px 25px 0px 25px;
+        margin: 10px 15px 0px 15px;
+    }
+
+    .caption a:hover{
+        letter-spacing: 3px;
+        color: #634D40;
+        text-decoration: none;
+    }
+
+    .caption a:after {
+        opacity: 0;
+    }
+
+    .intro-container {
+        padding: 10px;
+    }
+
+    .intro h1 {
+        font-size: 50px;
+        line-height: 70px;
     }
 }
