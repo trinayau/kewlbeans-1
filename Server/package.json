@@ -17,6 +17,7 @@
     "nodemon": "^2.0.15"
   },
   "dependencies": {
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "supertest": "^6.2.2"
   }
 }
