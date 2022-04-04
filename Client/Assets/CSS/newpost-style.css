@@ -14,3 +14,9 @@ h1 {
     letter-spacing: 2px;
 }
 
+.new-post-container {
+    width: 550px;
+    height: 500px;
+    background-color: #d4d1cc;
+    
+}
