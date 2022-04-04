@@ -1,0 +1,15 @@
+#new-post {
+    height:100vh;
+    align-items:center;
+    justify-content: center;
+    background-color: #c2ae9e;
+}
+
+h1 {
+    font-size: 86px;
+    line-height: 120px !important;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
