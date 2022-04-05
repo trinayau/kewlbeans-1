@@ -7,7 +7,6 @@ const fs = require("fs");
 
 let reviews;
 
-
 app.use(cors());
 /*Use express middleware in request processing pipeline*/
 
