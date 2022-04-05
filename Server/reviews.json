@@ -1,5 +1,4 @@
 [
-  {},
   {
     "id": 1,
     "title": "Tasting Room",
@@ -8,6 +7,19 @@
     "gif": "dog",
     "reaction": {
       "like": 1,
+      "clap": 0,
+      "love": 0
+    },
+    "comments": []
+  },
+  {
+    "id": 1,
+    "title": "Aloha Coffee Shop",
+    "description": "Hawaii",
+    "content": "Mahalo :) Nice acai bowls, and smoothies. Coffee was great.",
+    "gif": "hawaii",
+    "reaction": {
+      "like": 0,
       "clap": 0,
       "love": 0
     },
