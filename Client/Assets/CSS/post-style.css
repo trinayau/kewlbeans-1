@@ -1,11 +1,61 @@
-#allposts {
-    padding-top: 30px;
+body {
+    background-color: #d4d1cc!important;
 }
 
 nav a{
     color: #000 !important;
 }
 
+#allposts {
+    padding-top: 30px;
+}
+
+.pageTitle {
+    font-weight: 700;
+    line-height: 150px;
+    font-size: 90px;
+    color: #6e6057;
+    text-align: center;
+    
+
+}
+
+.pageTitle:hover {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 8'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .4s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='antiquewhite' stroke-width='1' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+    background-position: 0px 50px;
+    cursor: pointer;
+}
+
+.post-container {
+    padding: 20px;
+    color: #6e6057;
+    background-color: #d4d1cc;
+    border: 1px solid black;
+    margin: 5px;
+    text-align: center;
+    border-radius: 15px;
+}
+
 p {
     display: block !important;
+}
+
+.fa-solid {
+    font-size: 30px;
+    border: none;
+    padding: 10px;
+}
+
+img {
+    max-width: 30%;
+}
+
+button {
+    background: none;
+}
+
+input {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid brown;
 }

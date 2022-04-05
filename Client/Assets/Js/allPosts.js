@@ -96,3 +96,12 @@ const showPosts = async () => {
 
 showPosts();
 
+const newComment = (form, reviewId, commentInput) => {
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const commentBody = { comment: commentInput.value, id: reviewId};
+        const options = { method: "POST", body:  json.stringify(commentBody)};
+        fetch("http://localhost:3000/reviews/newcomment", options);
+        console.log("Comment received");
+    })
+}

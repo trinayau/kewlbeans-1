@@ -1,25 +1,38 @@
+/***** SET UP */
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const port = process.env.PORT || 3000;
 const bodyParser = require("body-parser");
 const fs = require("fs");
-
 let reviews;
 
-
-app.use(cors());
 /*Use express middleware in request processing pipeline*/
-
+app.use(cors());
+readJSON();
 app.use(bodyParser.text());
 app.use(express.json());
 
+//Default
 app.get('/', (req, res) => res.send('Latte.io!'));
 
+//Get all reviews
 app.get('/reviews', (req, res) => {
     readJSON();
     res.send(reviews);
 })
+
+//Find single review by id
+app.get("/reviews/:id", (req, res) => {
+    try {
+    const reviewID = req.params.id - 1;
+    const singleReview = reviews[reviewID];
+    res.send(singleReview)
+    } catch(err) {
+        console.error(err);
+    }
+  });
+
+/******* Make new post ********/
 
 app.post("/reviews/newreview", (req, res) => {
     const newReviewData = JSON.parse(req.body);
@@ -46,8 +59,17 @@ app.post("/reviews/newreview", (req, res) => {
     reviews.push(newReview);
     writeJSON(reviews);
     readJSON();
+});
+
+app.post("/reviews/newcomment", (req,res) => {
+    const newcommentBody = JSON.parse(req.body);
+    const id = req.params.id;
+    const comment = newcommentBody.comment;
+    reviews[id].comments.push(comment);
+    writeJSON(posts);
 })
 
+// Helper functions: writeJSON writes to file reviews.json
 function writeJSON(body) {
     const jsonString = JSON.stringify(body, null, 2)
     fs.writeFile("./reviews.json", jsonString, (err) => {
@@ -58,15 +80,11 @@ function writeJSON(body) {
         }
     })
 }
-
+//readJSON reads the reviews in reviews.json file and converts JSON string to JSON object
 function readJSON() {
-    fs.readFile("./reviews.json", "utf-8", (err, jsonString) => {
-        if(err) {
-            console.error(err)
-            return;
-        }
+    fs.readFile("./reviews.json", "utf-8", (err, reviewsJson) => {
         try {
-            reviews = JSON.parse(jsonString);
+            reviews = JSON.parse(reviewsJson);
         } catch (err) {
 console.error(err)
         }
@@ -80,10 +98,9 @@ console.error(err)
 //event listener that listens for click
 //put request on post with :id to update review.reaction.[specificReaction] ++;
 
-
 //firstly, write endpoint to fetch all posts in reviews.json
 // display this in web page
 // add comment section
 // add js functionality to update posts.comments
 
-module.exports = app;
+module.exports = app
