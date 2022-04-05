@@ -11,3 +11,7 @@
 #hot {
     font-size: 30px;
 }
+
+nav a{
+    color: #000 !important;
+}
