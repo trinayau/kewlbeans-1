@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": 0,
     "title": "Tasting Room",
     "description": "Exeter",
     "content": "Good coffee, many dogs, sourdough pizza on point! Dog-friendly, child-friendly.",
@@ -10,7 +10,7 @@
       "clap": 0,
       "love": 0
     },
-    "comments": []
+    "comments": ["Cute dog!", "Coffee was good"]
   },
   {
     "id": 1,

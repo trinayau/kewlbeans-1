@@ -44,8 +44,6 @@ const showPosts = async () => {
                         giphy.src = data.data[0].images.original.url;
                         gifDiv.append(giphy)
                     });
-        
-
         //reaction bar
         const reactionDiv = document.createElement("div");
         reactionDiv.classList.add("reaction-div");
@@ -62,7 +60,23 @@ const showPosts = async () => {
         const coffee = document.createElement("button");
         coffee.classList.add("coffee" , "fa-solid", "fa-mug-hot")
         reactionDiv.appendChild(coffee);
+        
+        //Comments area
+        const commentSection = document.createElement("div");
+        commentSection.setAttribute("class", "commentSection");
+        newDiv.append(commentSection);
 
+        //publish old comments
+        const postedComments = document.createElement("div");
+        postedComments.setAttribute("id", `oldComment${id}`);
+        commentSection.append(postedComments);
+
+        //find comments and make p element
+        comments.forEach(eachComment => {
+        const commentSingle = document.createElement("p");
+        commentSingle.textContent = eachComment;
+        postedComments.append(commentSingle);
+        });
         //new comments
         const formElement = document.createElement("form");
         reactionDiv.append(formElement);
@@ -77,9 +91,7 @@ const showPosts = async () => {
         submitBtn.setAttribute("value","submit");
         formElement.appendChild(comment);
         formElement.appendChild(submitBtn);
-
     }
-
 }
 
 showPosts();
