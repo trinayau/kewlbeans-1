@@ -61,12 +61,17 @@ app.post("/reviews/newreview", (req, res) => {
     readJSON();
 });
 
-app.post("/reviews/newcomment", (req,res) => {
-    const newcommentBody = JSON.parse(req.body);
-    const id = req.params.id;
-    const comment = newcommentBody.comment;
-    reviews[id].comments.push(comment);
-    writeJSON(posts);
+//New comment endpoint
+app.post("/reviews/newcomment", (req,res)=> {
+    try {
+    const newCommentBody = JSON.parse(req.body);
+    const id = newCommentBody.id;
+    const newComment = newCommentBody.comment;
+    reviews[id].comments.push(newComment);
+    writeJSON(reviews);
+    } catch(error) {
+        console.error(error)
+    }
 })
 
 // Helper functions: writeJSON writes to file reviews.json
