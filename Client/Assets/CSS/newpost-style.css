@@ -1,0 +1,87 @@
+body {
+    background: 
+    linear-gradient( 
+      rgba(200, 247, 197, 0.4),
+      rgba(129, 207, 224, 0.8)
+    ),
+    linear-gradient( 
+      rgba(130, 130, 130, 0.5),
+      rgba(130, 130, 115, 0.6)
+    ),
+    
+    radial-gradient(ellipse closest-side at center, rgba(255, 255, 255, 0.9) 50%, rgba(0, 0, 0, 0.4) 100%),
+    url('../Images/pawel-czerwinski-dYRUZ1ljs4s-unsplash.jpg') no-repeat center center !important;
+    background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: multiply,normal,normal,normal;
+}
+
+#new-post {
+    align-items:center;
+    justify-content: center;
+    /*background-color: #c2ae9e;*/
+}
+
+h1 {
+    font-size: 86px;
+    line-height: 120px !important;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.new-post-container {
+    background-color: #d4d1cc;
+    padding: 50px;
+    
+}
+
+label {
+    display: block !important;
+    font-size: 22px;
+    color: #8d7c6c;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+hr {
+    border-top: 2px solid;
+    border-bottom: 0;
+}
+
+input,
+textarea {
+  border-radius: 3px;
+  border: 0;
+  font-size: 18px;
+  padding: 10px 1px;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 0 0 1pt #eee;
+  transition: box-shadow 0.3s;
+}
+
+input:focus,
+textarea:focus,
+input[type=number]:focus {
+  box-shadow: 0 0 0 1pt #416051;
+  outline: none;
+
+}
+
+textarea {
+  min-height: 78px;
+}
+
+input,
+textarea {
+  padding: 10px 2%;
+  width: 97%;
+}
+
+.counter {
+    color:#8d7c6c;
+    margin: 0;
+}
