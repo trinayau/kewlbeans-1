@@ -19,6 +19,7 @@ app.get('/', (req, res) => res.send('Latte.io!'));
 app.get('/reviews', (req, res) => {
     readJSON();
     res.send(reviews);
+    res.statusCode(200);
 })
 
 //Find single review by id
@@ -51,7 +52,8 @@ app.post("/reviews/newreview", (req, res) => {
         },
         comments: []
     };
-
+    res.statusCode(201)
+    res.send(newReview);
     newReview.title += newReviewData.title;
     newReview.description += newReviewData.description;
     newReview.content += newReviewData.content;
@@ -103,4 +105,5 @@ console.error(err)
 // add comment section
 // add js functionality to update posts.comments
 
-module.exports = app
+module.exports = app;
+
