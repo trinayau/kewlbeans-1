@@ -10,7 +10,7 @@ let reviews;
 
 app.use(cors());
 /*Use express middleware in request processing pipeline*/
-readJSON();
+
 app.use(bodyParser.text());
 app.use(express.json());
 
@@ -80,9 +80,10 @@ console.error(err)
 //event listener that listens for click
 //put request on post with :id to update review.reaction.[specificReaction] ++;
 
+
 //firstly, write endpoint to fetch all posts in reviews.json
 // display this in web page
 // add comment section
 // add js functionality to update posts.comments
 
-module.exports = app
+module.exports = app;
