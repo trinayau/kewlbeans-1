@@ -4,5 +4,3 @@ const hot = document.getElementById("hot");
 const likeCounter = document.createElement("span");
 
 fetch("http://localhost:3000/")
-
-function setLikeCounter()
