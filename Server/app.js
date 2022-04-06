@@ -51,7 +51,7 @@ app.post("/reviews/newreview", (req, res) => {
         },
         comments: []
     };
-    res.statusCode(201)
+    res.status(201)
     res.send(newReview);
     newReview.title += newReviewData.title;
     newReview.description += newReviewData.description;
