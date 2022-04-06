@@ -51,7 +51,7 @@ app.post("/reviews/newreview", (req, res) => {
         },
         comments: []
     };
-    res.statusCode(201)
+    res.status(201)
     res.send(newReview);
     newReview.title += newReviewData.title;
     newReview.description += newReviewData.description;
@@ -75,14 +75,15 @@ app.post("/reviews/newcomment", (req,res)=> {
     }
 })
 
-app.get("/reviews/findreview", (req,res)=>{
+app.get("/emoji", (req, res) => {
+    console.log("called")
+    console.log(req.query);
     let id = req.query.id;
-    let emoji = req.query.emoji;
-    reviews[id].reaction[emoji] += 1;
+    let type = req.query.type;
+    reviews[id].reaction[type] += 1;
     writeJSON(reviews);
-    console.log('emoji recieved')
-})
-
+    res.send("hello")
+  });
 // Helper functions: writeJSON writes to file reviews.json
 function writeJSON(body) {
     const jsonString = JSON.stringify(body, null, 2)

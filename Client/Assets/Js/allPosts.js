@@ -141,12 +141,11 @@ function newComment(form, reviewId, commentInputId) {
 
 }
 
-function reactionNumber(button,id,count, emoji){
+function reactionNumber(button, count, id, type) {
     button.addEventListener("click", () => {
-count += 1;
-fetch(`http://localhost:3000/reviews/findreview?id=${id}&emoji=${emoji}`);
-button.innerHTML = `${count}`;
-button.disabled = true;
-console.log('reaction sent ')
-    })
-}
+      count += 1;
+      fetch(`http://localhost:3000/emoji?id=${id}&type=${type}`);
+      button.innerHTML = ` ${count}`;
+      button.disabled = true;
+    });
+  }
