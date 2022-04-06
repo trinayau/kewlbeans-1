@@ -19,7 +19,7 @@ app.get('/', (req, res) => res.send('Latte.io!'));
 app.get('/reviews', (req, res) => {
     readJSON();
     res.send(reviews);
-    res.statusCode(200);
+    //res.statusCode(200);
 })
 
 //Find single review by id
