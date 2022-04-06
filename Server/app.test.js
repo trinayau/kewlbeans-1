@@ -14,9 +14,9 @@ describe('API Server', () => {
         content: "Review of the coffee shop",
         gif: "",
         reaction: {
-            like: 0,
-            clap: 0,
-            love: 0
+            thumbs: 0,
+            heart: 0,
+            coffee: 0
         },
         comments: []
     };
