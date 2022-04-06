@@ -78,6 +78,16 @@ describe('reviews by id', () => {
     it('repsonds with stringified data', () => {
         expect(String);   
     });
+    //test if the comment is pushed to the comments array
+    //it('pushes new review to the reviews array', async () => {
+    //    const res = await request(api).post('/reviews/newreview').send(testReview)
+    //    expect(reviews.length).toBe(1);
+    //});
+
+//test get emoji route
+    it('gets /emoji', () => {
+        request(api).get('/emoji').expect(200,'hello');
+    })
 
 //test new comment
     describe('post new comment endpoint', () => {
@@ -97,26 +107,27 @@ describe('reviews by id', () => {
         it('returns an error if no comment is entered', async () => {
             const res = await request(api).post('/reviews/newcomment').send(emptyComment)
             expect(200);
-            expect('Please add a comment')
-        })
+            expect('Please add a comment');
+        });
   
     });
 
 });
 
 describe('helperFunctions', () => {
-  /*  it('stringify works', () => {
+      it('stringify works', () => {
         const jsonString = JSON.stringify(testReview)
         expect(String);
-    }) */
+        }) 
         it('readJSON is defined', () => {
             expect(readJSON).toBeDefined();
         })
         it('read File', () => {
             const spyfs = jest.spyOn(fs, 'readFile');
-            readJSON('./reviews.json');
+            readJSON();
             expect(spyfs).toHaveBeenCalled();
-        })
+        });
+
 
 
      // it('readJSON returns parsed data', () => {
@@ -128,9 +139,6 @@ describe('helperFunctions', () => {
         })
        // it('writeJSON')
        
-
-
-   
 
 })
 
