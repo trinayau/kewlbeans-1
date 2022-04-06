@@ -24,13 +24,18 @@ app.get('/reviews', (req, res) => {
 
 //Find single review by id
 app.get("/reviews/:id", (req, res) => {
-    try {
+    //try {
     const reviewID = req.params.id - 1;
     const singleReview = reviews[reviewID];
+    if (req.params.id>0 && req.params.id < reviews.length){
     res.send(singleReview)
-    } catch(err) {
-        console.error(err);
-    }
+    } else {
+        res.status(404);
+        res.send('Please enter a valid id');
+    };
+    //} catch(err) {
+       // console.error(err);
+   // }
   });
 
 /******* Make new post ********/
@@ -64,6 +69,7 @@ app.post("/reviews/newreview", (req, res) => {
 });
 
 //New comment endpoint
+/*
 app.post("/reviews/newcomment", (req,res)=> {
     try {
     const newCommentBody = JSON.parse(req.body);
@@ -75,6 +81,23 @@ app.post("/reviews/newcomment", (req,res)=> {
         console.error(error)
     }
 })
+*/
+
+//new comment endpoint 2 (easier to test I think)
+
+app.post("/reviews/newcomment", (req,res)=> {
+    const newCommentBody = JSON.parse(req.body);
+    const id = newCommentBody.id;
+    const newComment = newCommentBody.comment;
+    if (newCommentBody != null) {
+        reviews[id].comments.push(newComment);
+        writeJSON(reviews);
+    } else { 
+        res.status(400)
+        res.send('Please add a comment')
+    }
+})
+
 
 // Helper functions: writeJSON writes to file reviews.json
 function writeJSON(body) {
@@ -83,7 +106,6 @@ function writeJSON(body) {
         try {console.log("successfully written to reviews.json");}
         catch (err){
             console.error(err);
-
         }
     })
 }
@@ -110,5 +132,5 @@ console.error(err)
 // add comment section
 // add js functionality to update posts.comments
 
-module.exports = app;
+module.exports = {app, readJSON, writeJSON};
 
