@@ -19,7 +19,6 @@ app.get('/', (req, res) => res.send('Latte.io!'));
 app.get('/reviews', (req, res) => {
     readJSON();
     res.send(reviews);
-    res.statusCode(200);
 })
 
 //Find single review by id
@@ -46,9 +45,9 @@ app.post("/reviews/newreview", (req, res) => {
         content: "",
         gif: "",
         reaction: {
-            like: 0,
-            clap: 0,
-            love: 0
+            thumbs: 0,
+            heart: 0,
+            coffee: 0
         },
         comments: []
     };
@@ -74,6 +73,14 @@ app.post("/reviews/newcomment", (req,res)=> {
     } catch(error) {
         console.error(error)
     }
+})
+
+app.get("/reviews/findreview", (req,res)=>{
+    let id = req.query.id;
+    let emoji = req.query.emoji;
+    reviews[id].reaction[emoji] += 1;
+    writeJSON(reviews);
+    console.log('emoji recieved')
 })
 
 // Helper functions: writeJSON writes to file reviews.json

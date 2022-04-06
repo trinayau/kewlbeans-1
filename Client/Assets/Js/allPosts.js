@@ -54,16 +54,25 @@ const showPosts = async () => {
         textDiv.append(reactionDiv);
         
         const thumbs = document.createElement("button");
-        thumbs.classList.add("thumbs" , "fa-solid", "fa-thumbs-up")
+        thumbs.setAttribute("id",`thumbs${id}`);
+        thumbs.textContent=`${reaction.thumbs}`;
+        thumbs.classList.add("thumbs" , "fa-solid", "fa-thumbs-up");
         reactionDiv.appendChild(thumbs);
+        reactionNumber(thumbs,reaction.thumbs,id,"thumbs");
 
         const heart = document.createElement("button");
+        heart.setAttribute("id",`heart${id}`);
+        heart.textContent=`${reaction.heart}`;
         heart.classList.add("heart" , "fa-solid", "fa-heart")
         reactionDiv.appendChild(heart);
+        reactionNumber(heart,reaction.heart,id,"heart");
 
         const coffee = document.createElement("button");
+        coffee.setAttribute("id",`coffee${id}`);
+        coffee.textContent=`${reaction.coffee}`;
         coffee.classList.add("coffee" , "fa-solid", "fa-mug-hot")
         reactionDiv.appendChild(coffee);
+        reactionNumber(coffee,reaction.coffee,id,"coffee");
 
            //add comment title
            const commentTitle = document.createElement("p");
@@ -131,11 +140,12 @@ function newComment(form, reviewId, commentInputId) {
 
 }
 
-function reactionNumber(button,id,count, type){
+function reactionNumber(button,id,count, emoji){
     button.addEventListener("click", () => {
 count += 1;
-fetch("http://localhost:3000/reviews/newcomment");
+fetch(`http://localhost:3000/reviews/findreview?id=${id}&emoji=${emoji}`);
 button.innerHTML = `${count}`;
-
+button.disabled = true;
+console.log('reaction sent ')
     })
 }
