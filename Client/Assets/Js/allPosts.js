@@ -24,14 +24,17 @@ const showPosts = async () => {
         gifDiv.classList.add("col-6")
         newDiv.append(gifDiv);
         const giphy = document.createElement("img");
-        const giphyAPIKEY = "43TNXQTzYml4CNTzdlyxNveqsrh7z3CB";
-                let url = `https://api.giphy.com/v1/gifs/search?api_key=${giphyAPIKEY}&limit=25&offset=0&q=${gif}`;
-                fetch(url)
-                    .then((r) => r.json())
-                    .then((data) => {
-                        giphy.src = data.data[0].images.original.url;
-                        gifDiv.append(giphy)
-                    });
+        const urlGiphy = reviews[i].gif;
+        giphy.setAttribute("src", urlGiphy);
+        gifDiv.appendChild(giphy);
+        // const giphyAPIKEY = "43TNXQTzYml4CNTzdlyxNveqsrh7z3CB";
+        //         let url = `https://api.giphy.com/v1/gifs/search?api_key=${giphyAPIKEY}&limit=25&offset=0&q=${gif}`;
+        //         fetch(url)
+        //             .then((r) => r.json())
+        //             .then((data) => {
+        //                 giphy.src = data.data[0].images.original.url;
+        //                 gifDiv.append(giphy)
+        //             });
         //new textDiv
         const textDiv = document.createElement("div");
         newDiv.append(textDiv);
@@ -54,16 +57,25 @@ const showPosts = async () => {
         textDiv.append(reactionDiv);
         
         const thumbs = document.createElement("button");
-        thumbs.classList.add("thumbs" , "fa-solid", "fa-thumbs-up")
+        thumbs.setAttribute("id",`thumbs${id}`);
+        thumbs.textContent=`${reaction.thumbs}`;
+        thumbs.classList.add("thumbs" , "fa-solid", "fa-thumbs-up");
         reactionDiv.appendChild(thumbs);
+        reactionNumber(thumbs,reaction.thumbs,id,"thumbs");
 
         const heart = document.createElement("button");
+        heart.setAttribute("id",`heart${id}`);
+        heart.textContent=`${reaction.heart}`;
         heart.classList.add("heart" , "fa-solid", "fa-heart")
         reactionDiv.appendChild(heart);
+        reactionNumber(heart,reaction.heart,id,"heart");
 
         const coffee = document.createElement("button");
+        coffee.setAttribute("id",`coffee${id}`);
+        coffee.textContent=`${reaction.coffee}`;
         coffee.classList.add("coffee" , "fa-solid", "fa-mug-hot")
         reactionDiv.appendChild(coffee);
+        reactionNumber(coffee,reaction.coffee,id,"coffee");
 
            //add comment title
            const commentTitle = document.createElement("p");
@@ -132,3 +144,11 @@ function newComment(form, reviewId, commentInputId) {
 
 }
 
+function reactionNumber(button, count, id, type) {
+    button.addEventListener("click", () => {
+      count += 1;
+      fetch(`http://localhost:3000/emoji?id=${id}&type=${type}`);
+      button.innerHTML = ` ${count}`;
+      button.disabled = true;
+    });
+  }

@@ -17,9 +17,6 @@
     "supertest": "^6.2.2",
     "cors": "^2.8.5",
     "express": "^4.17.3"
-  },
-  "description": "",
-    "coverage": "^0.4.1",
-    "supertest": "^6.2.2"
   }
+}
 
