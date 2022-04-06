@@ -12,11 +12,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
     "jest": "^27.5.1",
     "nodemon": "^2.0.15",
-    "supertest": "^6.2.2",
-    "cors": "^2.8.5",
-    "express": "^4.17.3"
+    "supertest": "^6.2.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0"
   }
 }
-
