@@ -132,3 +132,11 @@ function newComment(form, reviewId, commentInputId) {
 
 }
 
+function reactionNumber(button,id,count, type){
+    button.addEventListener("click", () => {
+count += 1;
+fetch("http://localhost:3000/reviews/newcomment");
+button.innerHTML = `${count}`;
+
+    })
+}
