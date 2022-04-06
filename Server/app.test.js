@@ -21,6 +21,20 @@ let reviews = [];
 
 describe('API Server', () => {
     let api;
+    let reviews = [];
+    let testReview = {
+        id: reviews.length,
+        title: "Name of a coffee shop",
+        description: "Description of the coffee shop",
+        content: "Review of the coffee shop",
+        gif: "",
+        reaction: {
+            thumbs: 0,
+            heart: 0,
+            coffee: 0
+        },
+        comments: []
+    };
     
 
     let testComment = {
