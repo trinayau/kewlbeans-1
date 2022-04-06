@@ -107,6 +107,8 @@ app.get("/emoji", (req, res) => {
     writeJSON(reviews);
     res.send("hello")
   });
+
+  
 // Helper functions: writeJSON writes to file reviews.json
 function writeJSON(body) {
     const jsonString = JSON.stringify(body, null, 2)
