@@ -78,7 +78,7 @@ const showPosts = async () => {
            const commentTitle = document.createElement("p");
            commentTitle.classList.add("commentTitle")
            if(comments.length == 0) {
-              commentTitle.textContent = "Comments: 0 Make a comment!"
+              commentTitle.textContent = "Comments: (0) Make a comment!"
           } else {
               commentTitle.textContent = `Comments: (${comments.length})`
           }
@@ -136,6 +136,7 @@ function newComment(form, reviewId, commentInputId) {
        const commentBody = { comment : e.target[commentInputId].value, id: reviewId };
        const options = {method: "POST", body: JSON.stringify(commentBody)};
        fetch("http://localhost:3000/reviews/newcomment", options);
+       form.reset();
     })
 
 }

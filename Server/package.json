@@ -1,6 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
@@ -11,8 +12,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "body-parser": "^1.20.0",
-    "coverage": "^0.4.1",
     "jest": "^27.5.1",
     "nodemon": "^2.0.15",
     "supertest": "^6.2.2",
