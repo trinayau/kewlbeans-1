@@ -1,66 +1,18 @@
 [
   {
-    "id": 1,
-    "title": "Tasting Room",
-    "description": "Exeter",
-    "content": "Good coffee, many dogs, sourdough pizza on point! Dog-friendly, child-friendly.",
-    "gif": "dog",
-    "reaction": {
-      "thumbs": 3,
-      "heart": 1,
-      "coffee": 1
-    },
-    "comments": [
-      "Cute",
-      "hi",
-      "ho",
-      "bro",
-      "watsup",
-      "aloha",
-      "bro"
-    ]
-  },
-  {
-    "id": 2,
-    "title": "Aloha Coffee Shop",
-    "description": "Hawaii",
-    "content": "Mahalo :) Nice acai bowls, and smoothies. Coffee was great.",
-    "gif": "hawaii",
-    "reaction": {
-      "thumbs": 1,
-      "heart": 0,
-      "coffee": 1
-    },
-    "comments": [
-      "Hi"
-    ]
-  },
-  {
-    "id": 3,
-    "title": "Starbucks Coffee",
-    "description": "Opposite St James Park Tube Station",
-    "content": "Friendly staff and delicious coffees.",
-    "gif": "starbucks",
+    "id": 0,
+    "title": "Starbucks",
+    "description": "Victoria Station ",
+    "content": "rather fruity",
+    "gif": "https://media0.giphy.com/media/3o6vY6Ksw2gBEKJ70I/200.gif?cid=c19b0e63px02gptqmzauuwgx7pxlh2kehiirsnodccbphas9&rid=200.gif&ct=g",
+
     "reaction": {
       "thumbs": 1,
       "heart": 0,
       "coffee": 0
     },
     "comments": [
-      "Love this!"
+      "good job thayaan"
     ]
-  },
-  {
-    "id": 3,
-    "title": "hi",
-    "description": "bye",
-    "content": "hi",
-    "gif": "pig",
-    "reaction": {
-      "thumbs": 1,
-      "heart": 0,
-      "coffee": 0
-    },
-    "comments": []
   }
 ]

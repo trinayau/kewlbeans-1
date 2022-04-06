@@ -24,14 +24,17 @@ const showPosts = async () => {
         gifDiv.classList.add("col-6")
         newDiv.append(gifDiv);
         const giphy = document.createElement("img");
-        const giphyAPIKEY = "43TNXQTzYml4CNTzdlyxNveqsrh7z3CB";
-                let url = `https://api.giphy.com/v1/gifs/search?api_key=${giphyAPIKEY}&limit=25&offset=0&q=${gif}`;
-                fetch(url)
-                    .then((r) => r.json())
-                    .then((data) => {
-                        giphy.src = data.data[0].images.original.url;
-                        gifDiv.append(giphy)
-                    });
+        const urlGiphy = reviews[i].gif;
+        giphy.setAttribute("src", urlGiphy);
+        gifDiv.appendChild(giphy);
+        // const giphyAPIKEY = "43TNXQTzYml4CNTzdlyxNveqsrh7z3CB";
+        //         let url = `https://api.giphy.com/v1/gifs/search?api_key=${giphyAPIKEY}&limit=25&offset=0&q=${gif}`;
+        //         fetch(url)
+        //             .then((r) => r.json())
+        //             .then((data) => {
+        //                 giphy.src = data.data[0].images.original.url;
+        //                 gifDiv.append(giphy)
+        //             });
         //new textDiv
         const textDiv = document.createElement("div");
         newDiv.append(textDiv);
