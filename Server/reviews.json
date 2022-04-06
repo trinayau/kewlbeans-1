@@ -6,9 +6,9 @@
     "content": "Good coffee, many dogs, sourdough pizza on point! Dog-friendly, child-friendly.",
     "gif": "dog",
     "reaction": {
-      "like": 1,
-      "clap": 0,
-      "love": 0
+      "thumbs": 1,
+      "heart": 0,
+      "coffee": 0
     },
     "comments": [
       "Cute",
@@ -27,9 +27,9 @@
     "content": "Mahalo :) Nice acai bowls, and smoothies. Coffee was great.",
     "gif": "hawaii",
     "reaction": {
-      "like": 0,
-      "clap": 0,
-      "love": 0
+      "thumbs": 0,
+      "heart": 0,
+      "coffee": 0
     },
     "comments": [
       "Hi"
@@ -42,9 +42,9 @@
     "content": "Friendly staff and delicious coffees.",
     "gif": "starbucks",
     "reaction": {
-      "like": 0,
-      "clap": 0,
-      "love": 0
+      "thumbs": 0,
+      "hearts": 0,
+      "coffee": 0
     },
     "comments": [
       "Love this!"
