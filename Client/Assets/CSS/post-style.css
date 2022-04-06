@@ -6,6 +6,10 @@ nav a{
     color: #000 !important;
 }
 
+h2,h3, h5 {
+    line-height: 60px !important;
+}
+
 #allposts {
     padding-top: 30px;
 }
@@ -59,3 +63,25 @@ input {
     border-radius: 5px;
     border: 1px solid brown;
 }
+
+.commentSection {
+    max-height: 200px;
+    padding: 10px;
+    margin-bottom: 10px;
+    overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+  }
+
+  ::-webkit-scrollbar-corner    {
+      background-color: none;
+  }
