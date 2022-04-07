@@ -149,6 +149,12 @@ function reactionNumber(button, count, id, type) {
       count += 1;
       fetch(`https://latte-app.herokuapp.com/emoji?id=${id}&type=${type}`);
       button.innerHTML = ` ${count}`;
-      button.disabled = true;
+      if (count >= 5) {
+          const newPara = document.createElement("p");
+          newPara.textContent = "Will be added to map!"
+          newPara.style.fontSize = "15px";
+          newPara.style.lineHeight = "21px";
+          button.appendChild(newPara);
+      }
     });
   }
