@@ -5,7 +5,7 @@ function insertAfter(newElement, existingElement) {
 }
 
 const showPosts = async () => {
-    const res = await fetch ('http://localhost:3000/reviews');
+    const res = await fetch ('https://latte-app.herokuapp.com/reviews');
     const reviews = await res.json();
     for (let i = 0; i < reviews.length; i++) {
         const reviewIdx = reviews[i];
@@ -138,7 +138,7 @@ function newComment(form, reviewId, commentInputId) {
         e.preventDefault();
        const commentBody = { comment : e.target[commentInputId].value, id: reviewId };
        const options = {method: "POST", body: JSON.stringify(commentBody)};
-       fetch("http://localhost:3000/reviews/newcomment", options);
+       fetch("https://latte-app.herokuapp.com/reviews/newcomment", options);
        form.reset();
     })
 
@@ -147,7 +147,7 @@ function newComment(form, reviewId, commentInputId) {
 function reactionNumber(button, count, id, type) {
     button.addEventListener("click", () => {
       count += 1;
-      fetch(`http://localhost:3000/emoji?id=${id}&type=${type}`);
+      fetch(`https://latte-app.herokuapp.com/emoji?id=${id}&type=${type}`);
       button.innerHTML = ` ${count}`;
       button.disabled = true;
     });
