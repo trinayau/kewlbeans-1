@@ -1,21 +1,24 @@
 {
-  "name": "kewlbeans",
+  "name": "server",
   "version": "1.0.0",
-  "description": "#Lap 1 Project: Community Journalling Website",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./Server/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/akennedy205/kewlbeans.git"
+    "start": "node index.js",
+    "test": "jest --watchAll",
+    "coverage": "jest --coverage --silent"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/akennedy205/kewlbeans/issues"
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.2.2"
   },
-  "homepage": "https://github.com/akennedy205/kewlbeans#readme"
+  "dependencies": {
+    "body-parser": "^1.20.0"
+  }
 }
