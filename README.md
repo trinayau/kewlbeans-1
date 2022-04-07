@@ -52,10 +52,26 @@ Discussions included:
 We initially implemented separation of concerns with different Client and Server folders. This was later amended as we needed the server files to be exposed in the root for Heroku deployment. We made different branches for development on GitHub for each of us and got to work on adding the required features of:
 - Posting from web page and storing data in a JSON file
 - Call on GIPHY API when posting 
+- Dynamically creating posts from JSON file in HTML using JS
+- Creating an emoji reaction section in the displayed posts 
+- The emojis being able to update the number of times clicked
+- Adding a comment section to displayed posts
+- Users able to make comments
+- Comments being displayed after comment is posted
 
 ### Deploying
-- 
+ - We deployed via Heroku for server and Netlify for client
 
 ## License
 MIT License
-## 
+## Wins and Challenges
+### Wins
+ - Getting the features to work
+ - Testing the front end
+### Challenges
+ - Writing to JSON file using POST method was very challenging
+ - Adding GIF selector
+
+## Future Features
+ - Adding image upload
+ - Filter by old and new posts
