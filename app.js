@@ -41,7 +41,6 @@ app.get("/reviews/:id", (req, res) => {
 
 app.post("/reviews/newreview", (req, res) => {
     const newReviewData = JSON.parse(req.body);
-    console.log(newReviewData);
     //new object
     const newReview = {
         id: reviews.length,
@@ -67,22 +66,7 @@ app.post("/reviews/newreview", (req, res) => {
     readJSON();
 });
 
-//New comment endpoint
-/*
-app.post("/reviews/newcomment", (req,res)=> {
-    try {
-    const newCommentBody = JSON.parse(req.body);
-    const id = newCommentBody.id;
-    const newComment = newCommentBody.comment;
-    reviews[id].comments.push(newComment);
-    writeJSON(reviews);
-    } catch(error) {
-        console.error(error)
-    }
-})
-*/
-
-//new comment endpoint 2 (easier to test I think)
+//new comment endpoint (easier to test I think)
 
 app.post("/reviews/newcomment", (req,res)=> {
     const newCommentBody = JSON.parse(req.body);
@@ -129,18 +113,6 @@ console.error(err)
         }
     })
 }
-//Pseudocode for reaction bar
-// When I click the emoji on the front page
-// I want the number next to it to update to + 1
-// if I unclick it, then I want it to -1 (optional)
-// i want to update this review's reaction in reviews.json (put)
-//event listener that listens for click
-//put request on post with :id to update review.reaction.[specificReaction] ++;
-
-//firstly, write endpoint to fetch all posts in reviews.json
-// display this in web page
-// add comment section
-// add js functionality to update posts.comments
 
 module.exports = {app, readJSON, writeJSON};
 
