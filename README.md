@@ -2,10 +2,10 @@
 Lap 1 Project: Community Journalling Website
 
 Contributors:
-- [Thayaan Srisathialingam] (https://github.com/THAYAANS/)
-- [Liberty Sprackling] (https://github.com/LibertySprackling/)
-- [Trina Yau] (https://github.com/trinayau/)
-- [Andrew Kennedy] (https://github.com/akennedy205/)
+- [Thayaan Srisathialingam](https://github.com/THAYAANS/)
+- [Liberty Sprackling](https://github.com/LibertySprackling/)
+- [Trina Yau](https://github.com/trinayau/)
+- [Andrew Kennedy](https://github.com/akennedy205/)
 
 ## Project Description
 Latte.io was borne out of the team's mutual love for coffee and passion for helping small businesses in the UK thrive. Users can use the website to anonymously review coffee shops and check out reviews left by other users to find new coffee shops to visit. 
